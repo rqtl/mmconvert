@@ -33,21 +33,75 @@ mmconvert <-
     # convert positions to data frame
     if(is.character(positions)) {
         # split at ":"
+        pos_spl <- strsplit(positions, ":", fixed=TRUE)
+        markers <- names(pos_spl)
+
         # check each is length 2
+        if(!all(vapply(pos_spl, length, 0L)==2)) {
+            stop('positions should all be like "chr:position".')
+        }
+
         # pull apart chr and pos
-        # names -> rownames
+        chr <- vapply(pos_spl, "[", "", 1)
+        # strip off leading or ending white space
+        chr <- sub("^\\s+", "", chr)
+        chr <- sub("\\s+$", "", chr)
+
+        # positions as numbers
+        pos <- as.numeric(vapply(pos_spl, "[", "", 2))
+
+        positions <- data.frame(chr=chr,
+                                pos=pos,
+                                marker=markers)
+        rownames(positions) <- markers
     }
 
     if(is.data.frame(positions)) { # force to list
-        positions <- map_df_to_list(positions)
-    }
+        if(ncol(positions) == 2) { # no marker column
+            positions <- cbind(positions, marker=rownames(positions))
+        }
 
+        positions <- map_df_to_list(positions,
+                                    chr_column=colnames(positions)[1],
+                                    pos_column=colnames(positions)[2],
+                                    marker_column=colnames(positions)[3])
+    }
 
     # convert cox map to lists
     cmap <- mmconvert::coxmap
+    cmap$Mbp_grcm39 <- cmap$bp_grcm39/1e6
+
+    cmap_bp <- map_df_to_list(cmap, pos_column="bp_grcm39")
+    cmap_Mbp <- map_df_to_list(cmap, pos_column="Mbp_grcm39")
+    cmap_ave <- map_df_to_list(cmap, pos_column="cM_coxV3_ave")
+    cmap_female <- map_df_to_list(cmap, pos_column="cM_coxV3_female")
+    cmap_male <- map_df_to_list(cmap, pos_column="cM_coxV3_male")
+
+    cmap_input <- switch(input_type,
+                         "bp"=cmap_bp,
+                         "Mbp"=cmap_Mbp,
+                         "ave_cM"=cmap_ave,
+                         "female_cM"=cmap_female,
+                         "male_cM"=cmap_male)
 
     # convert input
+    result_bp <- interp_map(positions, cmap_input, cmap_bp)
+    result_Mbp <- interp_map(positions, cmap_input, cmap_Mbp)
+    result_ave <- interp_map(positions, cmap_input, cmap_ave)
+    result_female <- interp_map(positions, cmap_input, cmap_female)
+    result_male <- interp_map(positions, cmap_input, cmap_male)
 
     # combine results
+    result <- cbind(map_list_to_df(result_bp),
+                    Mbp=map_list_to_df(result_Mbp)$pos,
+                    ave=map_list_to_df(result_ave)$pos,
+                    female=map_list_to_df(result_female)$pos,
+                    male=map_list_to_df(result_male)$pos)
 
+    # reorder columns
+    result <- result[,c("marker", "chr", "ave", "female", "male",
+                        "pos", "Mbp")]
+    colnames(result) <- colnames(cmap)
+
+    result
 }
