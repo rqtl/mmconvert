@@ -1,24 +1,4 @@
-#' Interpolate between maps
-#'
-#' Use interpolate to convert from one map to another
-#'
-#' @param map The map to be interpolated; a list of vectors.
-#' @param oldmap Map with positions in the original scale, as in `map`.
-#' @param newmap Map with positions in the new scale.
-#'
-#' @return Object of same form as input `map` but in the units as in `newmap`.
-#'
-#' @examples
-#' # load example data
-#' iron <- read_cross2(system.file("extdata", "iron.zip", package="qtl2"))
-#'
-#' # positions to interpolate from cM to Mbp
-#' tointerp <- list("7" = c(pos7.1= 5, pos7.2=15, pos7.3=25),
-#'                  "9" = c(pos9.1=20, pos9.2=40))
-#'
-#' interp_map(tointerp, iron$gmap, iron$pmap)
-#'
-#' @export
+# internal function (duplicated from R/qtl2)
 interp_map <-
     function(map, oldmap, newmap)
 {

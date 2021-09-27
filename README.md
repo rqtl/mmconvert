@@ -12,7 +12,7 @@ the [Cox genetic map](https://doi.org/10.1534/genetics.109.105486) positions.
 
 ### Installation
 
-Install the qtl2convert package from
+Install the mmconvert package from
 [GitHub](https://github.com/rqtl/mmconvert) using the
 [remotes package](https://remotes.r-lib.org):
 

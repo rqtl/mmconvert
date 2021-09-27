@@ -1,2 +1,2 @@
 library(testthat)
-test_check("qtl2convert")
+test_check("mmconvert")

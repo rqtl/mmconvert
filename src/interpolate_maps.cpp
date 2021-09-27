@@ -57,34 +57,3 @@ NumericVector interpolate_map(const NumericVector& oldpos, const NumericVector& 
 
     return result;
 }
-
-// apply find_interval() to each of a vector of positions
-//
-// result has two columns and length(pos) rows
-//     1st column contains the intervals containing pos
-//     2nd column contains 0/1 indicators of whether pos matches left endpoint
-//         (to within tolerance tol)
-//
-// [[Rcpp::export]]
-IntegerMatrix find_intervals(const NumericVector& pos,
-                             const NumericVector& map,
-                             const double tol=1e-8)
-{
-    const int n_pos = pos.size();
-    const int n_map = map.size();
-    IntegerMatrix result(n_pos,2);
-
-    for(int i=0; i<n_pos; i++) {
-        int interval = find_interval(pos[i], map);
-        result(i,0) = interval;
-
-        if(interval < 0 || interval > n_map-1 ||
-           fabs(map[interval] - pos[i]) > tol)
-            result(i,1) = 0;
-        else result(i,1) = 1;
-    }
-
-    colnames(result) = CharacterVector::create("interval", "on_map");
-
-    return result;
-}
