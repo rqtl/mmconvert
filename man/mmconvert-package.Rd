@@ -6,7 +6,7 @@
 \alias{mmconvert-package}
 \title{mmconvert: Mouse Map Converter}
 \description{
-Convert mouse genome positions between the build 39 physical map and the Cox genetic map. <doi:10.1534/genetics.109.105486>
+Function to convert mouse genome positions between the build 39 physical map and the Cox genetic map <doi:10.1534/genetics.109.105486>.
 }
 \seealso{
 Useful links:
