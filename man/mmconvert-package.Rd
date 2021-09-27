@@ -4,7 +4,7 @@
 \name{mmconvert-package}
 \alias{mmconvert}
 \alias{mmconvert-package}
-\title{mmconvert: Mouse map converter}
+\title{mmconvert: Mouse Map Converter}
 \description{
 Convert mouse genome positions between the build 39 physical map and the Cox genetic map. <doi:10.1534/genetics.109.105486>
 }
