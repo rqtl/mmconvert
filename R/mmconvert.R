@@ -28,7 +28,7 @@
 mmconvert <-
     function(positions, input_type=c("bp", "Mbp", "ave_cM", "female_cM", "male_cM"))
 {
-    input_type <- match.arg(input.type)
+    input_type <- match.arg(input_type)
 
     # convert positions to data frame
     if(is.character(positions)) {
