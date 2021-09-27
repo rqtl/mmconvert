@@ -1,0 +1,27 @@
+Package: mmconvert
+Version: 0.1-1
+Date: 2021-09-27
+Title: Mouse map converter
+Description: Convert mouse genome positions between the build 39 physical map and the Cox genetic map. <doi:10.1534/genetics.109.105486>
+Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
+Maintainer: Karl W Broman <broman@wisc.edu>
+Authors@R: person("Karl W", "Broman", role=c("aut", "cre"),
+                  email="broman@wisc.edu", comment=c(ORCID = "0000-0002-4914-6671"))
+Depends:
+    R (>= 3.1.0)
+Imports:
+    Rcpp (>= 0.12.12),
+    utils,
+    stats
+Suggests:
+    testthat,
+    devtools,
+    roxygen2
+License: GPL-3
+URL: https://github.com/rqtl/mmconvert
+BugReports: https://github.com/rqtl/mmconvert/issues
+LinkingTo: Rcpp
+Encoding: UTF-8
+ByteCompile: true
+RoxygenNote: 7.1.2
+Roxygen: list(markdown=TRUE)
