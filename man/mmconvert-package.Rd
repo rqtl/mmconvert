@@ -2,22 +2,19 @@
 % Please edit documentation in R/mmconvert-package.R
 \docType{package}
 \name{mmconvert-package}
-\alias{mmconvert}
 \alias{mmconvert-package}
 \title{mmconvert: Mouse Map Converter}
 \description{
-Function to convert mouse genome positions between the build 39 physical map and the Cox genetic map <doi:10.1534/genetics.109.105486>.
+Function to convert mouse genome positions between the build 39
+physical map and the Cox genetic map
+\doi{10.1534/genetics.109.105486}.
 }
-\seealso{
-Useful links:
+\section{Useful links}{
+
 \itemize{
-  \item \url{https://github.com/rqtl/mmconvert}
-  \item Report bugs at \url{https://github.com/rqtl/mmconvert/issues}
+\item Source at \url{https://github.com/rqtl/mmconvert}
+\item BugReports to \url{https://github.com/rqtl/mmconvert/issues}
+}
 }
 
-}
-\author{
-\strong{Maintainer}: Karl W Broman \email{broman@wisc.edu} (\href{https://orcid.org/0000-0002-4914-6671}{ORCID})
-
-}
 \keyword{internal}
