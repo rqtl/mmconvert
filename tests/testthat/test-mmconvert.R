@@ -41,8 +41,8 @@ test_that("mmconvert works without names", {
     input2 <- c("1:3", "2:3")
     expect_equivalent(mmconvert(input1), mmconvert(input2, "Mbp"))
 
-    input1 <- list("1"="3000000", "2"="3000000")
-    input2 <- c("1"=3, "2"=3)
+    input1 <- list("1"=3000000, "2"=3000000)
+    input2 <- list("1"=3, "2"=3)
     expect_equivalent(mmconvert(input1), mmconvert(input2, "Mbp"))
 
 })
@@ -56,5 +56,15 @@ test_that("mmconvert handles chr names properly", {
     # error that all chr wrong
     expect_error( mmconvert(c(a="M:5", b="Z:3", c="Y:8")) )
     expect_error( mmconvert(list(M=c(5, 10), Y=c(8, 12), "Z"=3)) )
+
+    # convert x -> X
+    expect_equal( mmconvert("X:5"), mmconvert("x:5") )
+
+})
+
+
+test_that("mmconvert handles non-lists", {
+
+    expect_equal( mmconvert(c("1"=3, "2"=3)), mmconvert(list("1"=3, "2"=3)) )
 
 })

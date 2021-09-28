@@ -70,6 +70,10 @@ mmconvert <-
                                     chr_column=colnames(positions)[1],
                                     pos_column=colnames(positions)[2],
                                     marker_column=colnames(positions)[3])
+    } else {
+        if(!is.list(positions)) { # otherwise, force it to be a list?
+            positions <- as.list(positions)
+        }
     }
 
 
