@@ -5,7 +5,7 @@
 
 [Karl Broman](https://kbroman.org)
 
-Convert mouse genome positions between build 39 physical locations and
+R package to convert mouse genome positions between build 39 physical locations and
 the [Cox genetic map](https://doi.org/10.1534/genetics.109.105486) positions.
 
 ---
@@ -50,8 +50,8 @@ third column or included as row names.
 
 ```r
 input_df <- data.frame(chr=c(14,14,14),
-                       pos=c(6738536, 67215850, 121955310),
-                       marker=c("rs13482072", "rs13482231", "gnf14.117.278"))
+		       pos=c(6738536, 67215850, 121955310),
+		       marker=c("rs13482072", "rs13482231", "gnf14.117.278"))
 ```
 
 For either of these cases, the output is a data frame with seven
