@@ -26,6 +26,7 @@ e.g. \code{data.frame(chr=c(14,14,14), pos=c(6738536, 67215850, 121955310), mark
 \value{
 A data frame with the interpolated positions, with seven columns: marker,
 chromosome, sex-averaged cM, female cM, male cM, basepairs, and mega-basepairs.
+The rows are sorted by genomic position.
 }
 \description{
 Convert mouse genome positions between the build 39 physical map and the Cox genetic map.

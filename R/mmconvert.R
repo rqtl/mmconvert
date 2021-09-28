@@ -15,6 +15,7 @@
 #'
 #' @return A data frame with the interpolated positions, with seven columns: marker,
 #' chromosome, sex-averaged cM, female cM, male cM, basepairs, and mega-basepairs.
+#' The rows are sorted by genomic position.
 #'
 #' @details We use linear interpolation using the Cox map positions in
 #' the object [coxmap]. For positions outside the range of the
@@ -137,6 +138,10 @@ mmconvert <-
     result <- result[,c("marker", "chr", "ave", "female", "male",
                         "pos", "Mbp")]
     colnames(result) <- colnames(cmap)
+
+    # sort the output by genomic position
+    result <- result[order(factor(result$chr, levels=c(1:19,"X")),
+                           result$bp_grcm39),,drop=FALSE]
 
     result
 }
