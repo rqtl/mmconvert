@@ -37,6 +37,26 @@ the object \link{coxmap}. For positions outside the range of the
 markers on the Cox map, we extrapolate using the overall
 recombination rate.
 }
+\examples{
+# input as character strings like chr:position
+input_char <- c(rs13482072="14:6738536", rs13482231="14:67215850", gnf14.117.278="14:121955310")
+mmconvert(input_char)
+
+# input as list, as in the map object for R/qtl1 and R/qtl2
+input_list <- list("14"=c(rs13482072=6738536, rs13482231=67215850, gnf14.117.278=121955310))
+mmconvert(input_list)
+
+# input as data frame; *must* have chr as first column and position as second
+# (marker names can be third column, or can be row names)
+input_df <- data.frame(chr=c(14,14,14),
+                       pos=c(6738536, 67215850, 121955310),
+                       marker=c("rs13482072", "rs13482231", "gnf14.117.278"))
+mmconvert(input_df)
+
+# input can also be in Mbp
+input_df$pos <- input_df$pos / 1e6
+mmconvert(input_df, input_type="Mbp")
+}
 \seealso{
 \link{coxmap}
 }
