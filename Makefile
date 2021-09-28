@@ -1,4 +1,9 @@
-.PHONY: doc test
+.PHONY: doc test all
+
+all: doc README.md
+
+README.md: README.Rmd
+	R -e "knitr::knit('$<')"
 
 # build package documentation
 doc:

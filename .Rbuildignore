@@ -2,3 +2,4 @@
 Makefile$
 \.Rout$
 ^\.github$
+^README\.Rmd$
