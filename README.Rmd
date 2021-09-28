@@ -17,7 +17,7 @@ Install the mmconvert package from
 [remotes package](https://remotes.r-lib.org):
 
     install.packages("remotes")
-    remotes::install_github("mmconvert")
+    remotes::install_github("rqtl/mmconvert")
 
 ---
 
