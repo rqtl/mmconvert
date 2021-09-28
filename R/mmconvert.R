@@ -13,8 +13,8 @@
 #' @param input_type Character string indicating the type of positions provided (`"bp"`, `"Mbp"`,
 #' `"ave_cM"`, `"female_cM"`, or `"male_cM"`)
 #'
-#' @return A data frame with the interpolated positions, with six columns: marker, chromosome,
-#' basepairs, mega-basepairs, sex-averaged cM, female cM, and male cM.
+#' @return A data frame with the interpolated positions, with seven columns: marker,
+#' chromosome, sex-averaged cM, female cM, male cM, basepairs, and mega-basepairs.
 #'
 #' @details We use linear interpolation using the Cox map positions in
 #' the object [coxmap]. For positions outside the range of the

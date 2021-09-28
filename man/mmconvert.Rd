@@ -24,8 +24,8 @@ e.g. \code{data.frame(chr=c(14,14,14), pos=c(6738536, 67215850, 121955310), mark
 \code{"ave_cM"}, \code{"female_cM"}, or \code{"male_cM"})}
 }
 \value{
-A data frame with the interpolated positions, with six columns: marker, chromosome,
-basepairs, mega-basepairs, sex-averaged cM, female cM, and male cM.
+A data frame with the interpolated positions, with seven columns: marker,
+chromosome, sex-averaged cM, female cM, male cM, basepairs, and mega-basepairs.
 }
 \description{
 Convert mouse genome positions between the build 39 physical map and the Cox genetic map.
