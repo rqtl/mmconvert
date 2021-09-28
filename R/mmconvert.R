@@ -91,7 +91,7 @@ mmconvert <-
             warning("Ignoring chr ", paste(chr[!(chr %in% c(1:19,"X"))], collapse=", "))
             positions <- positions[chr %in% c(1:19,"X")]
         } else {
-            stop("Chromosome should be in 1-19, X")
+            stop("Chromosome should be in 1-19, X; we see: ", paste(chr, collapse=", "))
         }
     }
 
