@@ -77,17 +77,6 @@ use the argument `input_type="Mbp"`.
 
 ```r
 input_df$pos <- input_df$pos / 1e6
-input_df
-```
-
-```
-##   chr        pos        marker
-## 1  14   6.738536    rs13482072
-## 2  14  67.215850    rs13482231
-## 3  14 121.955310 gnf14.117.278
-```
-
-```r
 mmconvert(input_df, input_type="Mbp")
 ```
 
