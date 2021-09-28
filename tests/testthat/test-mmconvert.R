@@ -68,3 +68,14 @@ test_that("mmconvert handles non-lists", {
     expect_equal( mmconvert(c("1"=3, "2"=3)), mmconvert(list("1"=3, "2"=3)) )
 
 })
+
+test_that("mmconvert handles matrices", {
+
+    input1 <- cbind(chr=c(1,1,1,2,2,2),
+                    pos=c(232364, 5807509, 6222136, 8701875, 1960672, 8409166))
+    input2 <- cbind(chr=c("1","1","1","2","2","2"),
+                    pos=c(232364, 5807509, 6222136, 8701875, 1960672, 8409166))
+
+    expect_equal( mmconvert(input1), mmconvert(input2) )
+
+})

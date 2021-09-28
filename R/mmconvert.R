@@ -31,6 +31,9 @@ mmconvert <-
 {
     input_type <- match.arg(input_type)
 
+    # convert matrix to a data frame
+    if(is.matrix(positions)) positions <- as.data.frame(positions)
+
     # convert positions to data frame
     if(is.character(positions)) {
         # split at ":"
