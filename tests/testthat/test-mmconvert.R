@@ -34,3 +34,27 @@ test_that("mmconvert works at 0 position", {
     expect_equal(result_bp, mmconvert(pos_Mbp, "Mbp"))
 
 })
+
+test_that("mmconvert works without names", {
+
+    input1 <- c("1:3000000", "2:3000000")
+    input2 <- c("1:3", "2:3")
+    expect_equivalent(mmconvert(input1), mmconvert(input2, "Mbp"))
+
+    input1 <- list("1"="3000000", "2"="3000000")
+    input2 <- c("1"=3, "2"=3)
+    expect_equivalent(mmconvert(input1), mmconvert(input2, "Mbp"))
+
+})
+
+test_that("mmconvert handles chr names properly", {
+
+    # warning of some chr wrong
+    expect_warning( mmconvert(c(a="M:5", b="15:3", c="Y:8")) )
+    expect_warning( mmconvert(list(M=c(5, 10), Y=c(8, 12), "15"=3)) )
+
+    # error that all chr wrong
+    expect_error( mmconvert(c(a="M:5", b="Z:3", c="Y:8")) )
+    expect_error( mmconvert(list(M=c(5, 10), Y=c(8, 12), "Z"=3)) )
+
+})

@@ -35,6 +35,7 @@ mmconvert <-
         # split at ":"
         pos_spl <- strsplit(positions, ":", fixed=TRUE)
         markers <- names(pos_spl)
+        if(is.null(markers)) markers <- paste0("pos", seq_along(positions))
 
         # check each is length 2
         if(!all(vapply(pos_spl, length, 0L)==2)) {
@@ -57,6 +58,10 @@ mmconvert <-
     }
 
     if(is.data.frame(positions)) { # force to list
+        if(is.null(rownames(positions))) {
+            rownames(positions) <- paste0("pos", seq_len(nrow(positions)))
+        }
+
         if(ncol(positions) == 2) { # no marker column
             positions <- cbind(positions, marker=rownames(positions))
         }
@@ -65,6 +70,32 @@ mmconvert <-
                                     chr_column=colnames(positions)[1],
                                     pos_column=colnames(positions)[2],
                                     marker_column=colnames(positions)[3])
+    }
+
+
+    # make sure there are chromosome names
+    if(is.null(names(positions))) {
+        stop("input needs column names")
+    }
+
+    # force x -> X
+    chr <- names(positions) <- toupper(names(positions))
+
+    # drop chr outside 1-19, X
+    if(!all(chr %in% c(1:19,"X"))) {
+        if(any(chr %in% c(1:19,"X"))) {
+            warning("Ignoring chr ", paste(chr[!(chr %in% c(1:19,"X"))], collapse=", "))
+            positions <- positions[chr %in% c(1:19,"X")]
+        } else {
+            stop("Chromosome should be in 1-19, X")
+        }
+    }
+
+    # make sure there are marker names
+    for(i in seq_along(positions)) {
+        if(is.null(names(positions[[i]]))) {
+            names(positions[[i]]) <- paste0("pos", names(positions)[i], "_", seq_along(positions[[i]]))
+        }
     }
 
     # convert cox map to lists
