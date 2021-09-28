@@ -66,10 +66,42 @@ mmconvert(input_df)
 
 ```
 ##                      marker chr cM_coxV3_ave cM_coxV3_female cM_coxV3_male bp_grcm39 Mbp_grcm39
-## rs13482072       rs13482072  14      0.36341         0.38999       0.33855   6738536   6.738536
-## rs13482231       rs13482231  14     28.53961        34.47776      22.66819  67215850  67.215850
-## gnf14.117.278 gnf14.117.278  14     59.35825        64.29810      54.71467 121955310 121.955310
+## rs13482072       rs13482072  14      0.36342         0.39000       0.33856   6738536   6.738536
+## rs13482231       rs13482231  14     28.53962        34.47777      22.66820  67215850  67.215850
+## gnf14.117.278 gnf14.117.278  14     59.35826        64.29811      54.71468 121955310 121.955310
 ```
+
+If you want to give the input positions in Mbp rather than basepairs,
+use the argument `input_type="Mbp"`.
+
+
+```r
+input_df$pos <- input_df$pos / 1e6
+input_df
+```
+
+```
+##   chr        pos        marker
+## 1  14   6.738536    rs13482072
+## 2  14  67.215850    rs13482231
+## 3  14 121.955310 gnf14.117.278
+```
+
+```r
+mmconvert(input_df, input_type="Mbp")
+```
+
+```
+##                      marker chr cM_coxV3_ave cM_coxV3_female cM_coxV3_male bp_grcm39 Mbp_grcm39
+## rs13482072       rs13482072  14      0.36342         0.39000       0.33856   6738536   6.738536
+## rs13482231       rs13482231  14     28.53962        34.47777      22.66820  67215850  67.215850
+## gnf14.117.278 gnf14.117.278  14     59.35826        64.29811      54.71468 121955310 121.955310
+```
+
+The input positions can also be provided in sex-averaged, female, or male cM.
+But note that the bp or Mbp positions must be in mouse genome build
+39, and cM positions must be according to the
+[Cox Map V3](https://github.com/kbroman/CoxMapV3).
 
 ---
 
