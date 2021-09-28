@@ -22,3 +22,15 @@ test_that("mmconvert works in a simple case", {
     expect_equal(mmconvert(input2), expected_result)
     expect_equal(mmconvert(input3), expected_result)
 })
+
+
+test_that("mmconvert works at 0 position", {
+
+    pos_Mbp <- setNames(paste(c(1:19,"X"), 3, sep=":"), c(1:19,"X"))
+    pos_bp <- setNames(paste(c(1:19,"X"), 3e6, sep=":"), c(1:19,"X"))
+
+    result_bp <- mmconvert(pos_bp)
+
+    expect_equal(result_bp, mmconvert(pos_Mbp, "Mbp"))
+
+})
