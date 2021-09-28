@@ -25,7 +25,7 @@ Install the mmconvert package from
 
 [mmconvert](https://github.com/rqtl/mmconvert) contains a single
 function `mmconvert()`. It takes a set of positions as input, plus and
-indication of whether they are basepairs or Mbp (in build 37) or
+indication of whether they are basepairs or Mbp (in build 39) or
 sex-averaged, female, or male cM (from the [revised Cox genetic
 map](https://github.com/kbroman/CoxMapV3)).
 
