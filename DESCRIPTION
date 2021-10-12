@@ -10,9 +10,7 @@ Authors@R: person("Karl W", "Broman", role=c("aut", "cre"),
 Depends:
     R (>= 3.5.0)
 Imports:
-    Rcpp (>= 0.12.12),
-    utils,
-    stats
+    Rcpp (>= 0.12.12)
 Suggests:
     testthat,
     devtools,
