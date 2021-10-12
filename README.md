@@ -1,5 +1,7 @@
 ### mmconvert
 
+[![DOI](https://zenodo.org/badge/410972779.svg)](https://zenodo.org/badge/latestdoi/410972779)
+
 [![R-CMD-check](https://github.com/rqtl/mmconvert/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/mmconvert/actions)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/mmconvert)](https://cran.r-project.org/package=mmconvert)
 
@@ -50,8 +52,8 @@ third column or included as row names.
 
 ```r
 input_df <- data.frame(chr=c(14,14,14),
-		       pos=c(6738536, 67215850, 121955310),
-		       marker=c("rs13482072", "rs13482231", "gnf14.117.278"))
+               pos=c(6738536, 67215850, 121955310),
+               marker=c("rs13482072", "rs13482231", "gnf14.117.278"))
 ```
 
 For either of these cases, the output is a data frame with seven
