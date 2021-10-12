@@ -73,13 +73,34 @@ cross2_to_grcm39 <-
 
     map <- map[map$marker %in% markers, , drop=FALSE]
 
+    gmap <- map_df_to_list(map, "chr", "cM_cox", "marker")
+    map$Mbp_grcm39 <- map$bp_grcm39/1e6
+    pmap <- map_df_to_list(map, "chr", "Mbp_grcm39", "marker")
+
     # reorder markers in geno
+    for(chr in names(pmap)) {
+        g <- cross$geno[[chr]]
+        g <- g[, names(pmap[[chr]]), drop=FALSE]
+        cross$geno[[chr]] <- g
+    }
 
     # reorder markers in founder_geno
+    if("founder_geno" %in% names(cross)) {
+        for(chr in names(pmap)) {
+            fg <- cross$founder_geno[[chr]]
+            fg <- fg[, names(pmap[[chr]]), drop=FALSE]
+            cross$founder_geno[[chr]] <- fg
+        }
+    }
 
     # paste in new genetic map
+    cross$gmap <- gmap
 
     # paste in new physical map
+    cross$pmap <- pmap
 
-    map
+    # make sure that is_x_chr gets subset, if necessary
+    cross$is_x_chr <- cross$is_x_chr[names(pmap)]
+
+    cross
 }
