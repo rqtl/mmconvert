@@ -15,4 +15,7 @@ test_that("cross2_to_grcm39 works for DOex", {
     expect_equal(tot_mar(DOex_rev), tot_mar(DOex)-14)
     expect_equal(n_ind(DOex_rev), n_ind(DOex))
 
+    DOex_rev2 <- cross2_to_grcm39(DOex, "mm")
+    expect_equal(DOex_rev2, DOex_rev)
+
 })
