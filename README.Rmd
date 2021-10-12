@@ -80,7 +80,7 @@ But note that the bp or Mbp positions must be in mouse genome build
 #### `cross2_to_grcm39()`
 
 `cross2_to_grcm39()` takes a cross2 object from
-[R/qtl2](https://kbroman.org/qtl2) with mouse genotype data from one
+[R/qtl2](https://kbroman.org/qtl2/) with mouse genotype data from one
 of the MUGA arrays and converts it to mouse genome build GRCm39, by
 possibly subsetting the markers, reordering them according to the
 GRCm39 build, and plugging in GRCm39 Mbp positions and the revised Cox
