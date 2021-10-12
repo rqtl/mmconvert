@@ -80,14 +80,17 @@ cross2_to_grcm39 <-
     pmap <- map_df_to_list(map, "chr", "Mbp_grcm39", "marker")
 
     # reorder markers in geno
+    cross$geno <- cross$geno[names(pmap)]
     for(chr in names(pmap)) {
         g <- cross$geno[[chr]]
         g <- g[, names(pmap[[chr]]), drop=FALSE]
         cross$geno[[chr]] <- g
     }
 
+
     # reorder markers in founder_geno
     if("founder_geno" %in% names(cross)) {
+        cross$founder_geno <- cross$founder_geno[names(pmap)]
         for(chr in names(pmap)) {
             fg <- cross$founder_geno[[chr]]
             fg <- fg[, names(pmap[[chr]]), drop=FALSE]
