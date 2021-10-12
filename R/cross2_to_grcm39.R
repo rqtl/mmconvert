@@ -26,7 +26,7 @@
 #' file <- paste0("https://raw.githubusercontent.com/rqtl/",
 #'                "qtl2data/master/DOex/DOex.zip")
 #' DOex <- read_cross2(file)
-#' DOex <- cross2_to_grcm39(DOex)
+#' DOex_rev <- cross2_to_grcm39(DOex)
 #' }
 
 cross2_to_grcm39 <-
