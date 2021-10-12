@@ -38,12 +38,14 @@ cross2_to_grcm39 <-
     # markers in the cross object
     markers <- unlist(lapply(cross$geno, colnames))
 
+    # MUGA maps (internal dataset)
+    muga_maps <- mmconvert::MUGAmaps
+
     array <- match.arg(array)
     if(array == "guess") {
         # compare marker names to the four MUGA arrays
         # use the one with the most matches
 
-        muga_maps <- mmconvert::MUGAmaps
         n_match <- vapply(muga_maps, function(a,b) sum(b %in% a$marker), 0, markers)
         if(!any(n_match > 0)) {
             stop("No markers found in the MUGA arrays")
