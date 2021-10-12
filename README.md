@@ -1,7 +1,5 @@
 ### mmconvert
 
-[![DOI](https://zenodo.org/badge/410972779.svg)](https://zenodo.org/badge/latestdoi/410972779)
-
 [![R-CMD-check](https://github.com/rqtl/mmconvert/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/mmconvert/actions)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/mmconvert)](https://cran.r-project.org/package=mmconvert)
 
@@ -25,8 +23,12 @@ Install the mmconvert package from
 
 ### Usage
 
-[mmconvert](https://github.com/rqtl/mmconvert) contains a single
-function `mmconvert()`. It takes a set of positions as input, plus and
+[mmconvert](https://github.com/rqtl/mmconvert) contains two functions:
+`mmconvert()` and `cross2_to_grcm39()`.
+
+#### `mmconvert()`
+
+`mmconvert()` takes a set of positions as input, plus and
 indication of whether they are basepairs or Mbp (in build 39) or
 sex-averaged, female, or male cM (from the [revised Cox genetic
 map](https://github.com/kbroman/CoxMapV3)).
@@ -93,6 +95,28 @@ The input positions can also be provided in sex-averaged, female, or male cM.
 But note that the bp or Mbp positions must be in mouse genome build
 39, and cM positions must be according to the
 [Cox Map V3](https://github.com/kbroman/CoxMapV3).
+
+#### `cross2_to_grcm39()`
+
+`cross2_to_grcm39()` takes a cross2 object from
+[R/qtl2](https://kbroman.org/qtl2) with mouse genotype data from one
+of the MUGA arrays and converts it to mouse genome build GRCm39, by
+possibly subsetting the markers, reordering them according to the
+GRCm39 build, and plugging in GRCm39 Mbp positions and the revised Cox
+genetic map. See <https://github.com/kbroman/MUGAarrays> for the
+MUGA array annotations and <https://github.com/kbroman/CoxMapV3> for
+the revised Cox genetic map.
+
+
+```r
+file <- paste0("https://raw.githubusercontent.com/rqtl/",
+               "qtl2data/master/DOex/DOex.zip")
+
+library(qtl2)
+DOex <- read_cross2(file)
+
+DOex_rev <- cross2_to_grcm39(DOex)
+```
 
 ---
 
