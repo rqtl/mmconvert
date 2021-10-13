@@ -1,6 +1,6 @@
 Package: mmconvert
-Version: 0.2-3
-Date: 2021-10-12
+Version: 0.2-4
+Date: 2021-10-13
 Title: Mouse Map Converter
 Description: Function to convert mouse genome positions between the build 39 physical map and the Cox genetic map <doi:10.1534/genetics.109.105486>.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)

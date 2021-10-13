@@ -110,7 +110,7 @@ the revised Cox genetic map.
 
 ```r
 file <- paste0("https://raw.githubusercontent.com/rqtl/",
-               "qtl2data/master/DOex/DOex.zip")
+               "qtl2data/main/DOex/DOex.zip")
 
 library(qtl2)
 DOex <- read_cross2(file)

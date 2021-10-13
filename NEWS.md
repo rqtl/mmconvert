@@ -1,4 +1,4 @@
-## mmconvert 0.2-3 (2021-10-12)
+## mmconvert 0.2-4 (2021-10-13)
 
 - Added a dataset with the MUGA array annotations for markers on the
   autosomes or X chromosome, with mouse build GRCm39 positions and

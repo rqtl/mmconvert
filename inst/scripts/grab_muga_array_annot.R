@@ -4,7 +4,7 @@
 library(here)
 library(data.table)
 
-url <- "https://raw.githubusercontent.com/kbroman/MUGAarrays/master/UWisc/"
+url <- "https://raw.githubusercontent.com/kbroman/MUGAarrays/main/UWisc/"
 
 files <- c(gm="gm_uwisc_v2.csv",
            mm="mm_uwisc_v2.csv",
