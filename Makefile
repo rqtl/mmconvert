@@ -1,6 +1,6 @@
 .PHONY: doc test all
 
-all: doc README.md
+all: doc README.md data/MUGAmaps.RData
 
 README.md: README.Rmd
 	R -e "knitr::knit('$<')"
@@ -12,3 +12,6 @@ doc:
 # run tests
 test:
 	R -e 'devtools::test()'
+
+data/MUGAmaps.RData: inst/scripts/grab_muga_array_annot.R
+	R -e "source('$<')"
