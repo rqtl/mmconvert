@@ -8,6 +8,13 @@
 R package to convert mouse genome positions between build 39 physical locations and
 the [Cox genetic map](https://doi.org/10.1534/genetics.109.105486) positions.
 
+The package is a reimplementation of part of the basic functionality
+of the [mouse map
+converter](https://churchill-lab.jax.org/mousemapconverter) web
+service from [Gary Churchill's
+group](https://churchill-lab.jax.org/website/) at the [Jackson
+Lab](https://jax.org).
+
 ---
 
 ### Installation
