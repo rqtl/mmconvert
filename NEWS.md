@@ -1,6 +1,8 @@
-## mmconvert 0.3-1 (2023-03-17)
+## mmconvert 0.3-2 (2023-03-17)
 
 - Revised Cox genetic maps, estimated using the original crimap software.
+
+- Revised MUGAmaps, using the corrected Cox genetic maps.
 
 
 ## mmconvert 0.2-4 (2021-10-13)

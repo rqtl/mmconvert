@@ -14,7 +14,7 @@ Each has columns marker, chromosome, build 39 basepair position, and sex-average
 }
 \details{
 SNP probes for the MUGA arrays were blasted against mouse genome
-build GRCm39 and locations interpolated using theRevised Cox maps.
+build GRCm39 and locations interpolated using revised Cox maps.
 See \url{https://github.com/kbroman/MUGAarrays} for the array
 annotations and \url{https://github.com/kbroman/CoxMapV3} for the
 genetic maps. Note that for the genetic map locations, markers were

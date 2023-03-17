@@ -6,10 +6,10 @@ library(data.table)
 
 url <- "https://raw.githubusercontent.com/kbroman/MUGAarrays/main/UWisc/"
 
-files <- c(gm="gm_uwisc_v2.csv",
-           mm="mm_uwisc_v2.csv",
-           mini="mini_uwisc_v3.csv",
-           muga="muga_uwisc_v2.csv")
+files <- c(gm="gm_uwisc_v3.csv",
+           mm="mm_uwisc_v3.csv",
+           mini="mini_uwisc_v4.csv",
+           muga="muga_uwisc_v3.csv")
 
 MUGAmaps <- as.list(files)
 col2keep <- c("marker", "chr", "bp_grcm39", "cM_cox")
