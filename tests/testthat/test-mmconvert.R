@@ -4,9 +4,9 @@ test_that("mmconvert works in a simple case", {
 
     expected_result <- structure(list(marker=c("rs13482072", "rs13482231", "gnf14.117.278"),
                                       chr = c("14", "14", "14"),
-                                      cM_coxV3_ave = c(0.36342, 28.53962, 59.35826),
-                                      cM_coxV3_female = c(0.39000, 34.47777, 64.29811),
-                                      cM_coxV3_male = c(0.33856, 22.66820, 54.71468),
+                                      cM_coxV3_ave = c(0.36404, 28.63568, 59.57310),
+                                      cM_coxV3_female = c(0.38860, 34.85621, 64.62113),
+                                      cM_coxV3_male = c(0.34262, 22.71767, 55.06443),
                                       bp_grcm39 = c(6738536L, 67215850L, 121955310L),
                                       Mbp_grcm39 = c(6.738536, 67.215850, 121.955310)),
                                  class = "data.frame",

@@ -1,6 +1,6 @@
 Package: mmconvert
-Version: 0.2-4
-Date: 2021-10-13
+Version: 0.3-1
+Date: 2023-03-17
 Title: Mouse Map Converter
 Description: Function to convert mouse genome positions between the build 39 physical map and the Cox genetic map <doi:10.1534/genetics.109.105486>.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
@@ -23,5 +23,5 @@ LinkingTo: Rcpp
 LazyData: true
 Encoding: UTF-8
 ByteCompile: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Roxygen: list(markdown=TRUE)

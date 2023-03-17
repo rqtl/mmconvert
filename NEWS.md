@@ -1,3 +1,8 @@
+## mmconvert 0.3-1 (2023-03-17)
+
+- Revised Cox genetic maps, estimated using the original crimap software.
+
+
 ## mmconvert 0.2-4 (2021-10-13)
 
 - Added a dataset with the MUGA array annotations for markers on the
