@@ -16,7 +16,7 @@ mmconvert(
 e.g., \code{c(rs13482072="14:6738536", rs13482231="14:67215850", gnf14.117.278="14:121955310")}.
 \item a list of marker positions, each list being positions on a given chromosome,
 e.g., \code{list("14"=c(rs13482072=6738536, rs13482231=67215850, gnf14.117.278=121955310))}.
-\item a data frame with columns chromosome, position, and marker, e.g.
+\item a data frame with columns chromosome, position, and marker,
 e.g. \code{data.frame(chr=c(14,14,14), pos=c(6738536, 67215850, 121955310), marker=c("rs13482072", "rs13482231", "gnf14.117.278"))}.
 }}
 
