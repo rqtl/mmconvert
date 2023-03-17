@@ -46,6 +46,14 @@ cross2_to_grcm39 <-
         # compare marker names to the four MUGA arrays
         # use the one with the most matches
 
+        # include the combination of GM and MM
+        muga_maps$gm_n_mm <- rbind(muga_maps$gm, muga_maps$mm[!(muga_maps$mm$marker %in% muga_maps$gm$marker),])
+        muga_maps$gm_n_mm <- muga_maps$gm_n_mm[order( factor(muga_maps$gm_n_mm$chr, c(1:19,"X")),
+                                                     muga_maps$gm_n_mm$bp_grcm39,
+                                                     muga_maps$gm_n_mm$cM_cox,
+                                                     muga_maps$gm_n_mm$marker), ]
+
+
         n_match <- vapply(muga_maps, function(a,b) sum(b %in% a$marker), 0, markers)
         if(!any(n_match > 0)) {
             stop("No markers found in the MUGA arrays")
