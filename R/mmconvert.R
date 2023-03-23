@@ -166,5 +166,9 @@ mmconvert <-
     result <- result[order(factor(result$chr, levels=c(1:19,"X")),
                            result$bp_grcm39),,drop=FALSE]
 
+    # check whether values are out of range
+    ranges <- tapply(result$bp_grcm39, result$chr, range, na.rm=TRUE)
+    bp_out_of_range(ranges)
+
     result
 }

@@ -1,3 +1,16 @@
+## mmconvert 0.5-1 (2023-03-23)
+
+- Added dataset `grcm39_chrlen` with lengths of GRCm39 chromosomes
+  in basepairs.
+
+- Revised mmconvert to give warnings if inferred positions are outside
+  of the range of chromosomes in GRCm39. (Issue #7)
+
+- In `cross2_to_grcm39()` when using "guess", only pick the GM/MM
+  combination if it gives >20 additional markers than either GM or MM
+  on their own.
+
+
 ## mmconvert 0.4 (2023-03-22)
 
 - Revised Cox genetic maps, estimated using the original crimap software.

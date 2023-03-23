@@ -53,8 +53,13 @@ cross2_to_grcm39 <-
                                                      muga_maps$gm_n_mm$cM_cox,
                                                      muga_maps$gm_n_mm$marker), ]
 
-
         n_match <- vapply(muga_maps, function(a,b) sum(b %in% a$marker), 0, markers)
+
+        # only pick "gm_n_mm" if it's >20 markers more than gm or mm on their own
+        if(n_match["gm_n_mm"] < n_match["gm"]+20 || n_match["gm_n_mm"] < n_match["mm"]+20) {
+            n_match["gm_n_mm"] <- 0
+        }
+
         if(!any(n_match > 0)) {
             stop("No markers found in the MUGA arrays")
         }
