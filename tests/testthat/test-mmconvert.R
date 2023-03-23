@@ -71,17 +71,19 @@ test_that("mmconvert handles non-lists", {
 
 test_that("mmconvert handles matrices", {
 
-    input1 <- c("1:300000000", "2:300000000")
+    input1 <- cbind(chr=c(1,1,1,2,2,2),
+                    pos=c(232364, 5807509, 6222136, 8701875, 1960672, 8409166))
+    input2 <- cbind(chr=c("1","1","1","2","2","2"),
+                    pos=c(232364, 5807509, 6222136, 8701875, 1960672, 8409166))
 
-    expect_warning( mmconvert(input1) )
+    expect_equal( mmconvert(input1), mmconvert(input2) )
 
 })
 
-
 test_that("mmconvert gives out-of-range warning", {
 
-    result_bp <- mmconvert(pos_bp)
+    input1 <- c("1:300000000", "2:300000000")
 
-    expect_equal(result_bp, mmconvert(pos_Mbp, "Mbp"))
+    expect_warning( mmconvert(input1) )
 
 })
