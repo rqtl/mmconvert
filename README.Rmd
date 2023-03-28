@@ -12,7 +12,7 @@ for the build 39 physical map.)
 
 The package is a reimplementation of part of the basic functionality
 of the mouse map converter web service from Gary Churchill's group at
-the [Jackson Lab](https://www.jax.org).
+the Jackson Lab.
 
 ---
 
