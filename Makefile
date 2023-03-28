@@ -15,3 +15,6 @@ test:
 
 data/MUGAmaps.RData: inst/scripts/grab_muga_array_annot.R
 	R -e "source('$<')"
+
+data/coxmap.RData: inst/scripts/smooth_coxmaps.R
+	R -e "source('$<')"

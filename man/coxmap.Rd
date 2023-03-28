@@ -16,6 +16,7 @@ Genetic maps were re-estimated after reordering markers according to their posit
 in mouse genome build 39. See \url{https://github.com/kbroman/CoxMapV3}.
 Markers were shifted so that 0 cM corresponds to 3 Mbp, using the chromosome- and
 sex-specific recombination rate.
+The maps are smoothed slightly to avoid intervals with 0 recombination.
 }
 \examples{
 data(coxmap)

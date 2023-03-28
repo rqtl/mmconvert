@@ -1,4 +1,4 @@
-## mmconvert 0.5-1 (2023-03-23)
+## mmconvert 0.5-2 (2023-03-28)
 
 - Added dataset `grcm39_chrlen` with lengths of GRCm39 chromosomes
   in basepairs.
@@ -9,6 +9,16 @@
 - In `cross2_to_grcm39()` when using "guess", only pick the GM/MM
   combination if it gives >20 additional markers than either GM or MM
   on their own.
+
+- Replaced the `coxmap` object with a smoothed version (using the
+  R/qtl2 function `smooth_gmap()` with `alpha=0.02`), with intervals
+  with 0 recombination smoothed out to allow some recombination. The `mmconvert()`
+  function uses this version of the Cox maps, and so gives
+  interpolated positions that are similarly smoothed.
+  Included a script `smooth_coxmaps.R` that does the work.
+
+- Revised the MUGA array datasets to use this "smoothed" version of the
+  Cox maps.
 
 
 ## mmconvert 0.4 (2023-03-22)
