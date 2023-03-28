@@ -11,11 +11,8 @@ the [Cox genetic map](https://doi.org/10.1534/genetics.109.105486) positions.
 for the build 39 physical map.)
 
 The package is a reimplementation of part of the basic functionality
-of the [mouse map
-converter](https://churchill-lab.jax.org/mousemapconverter) web
-service from [Gary Churchill's
-group](https://churchill-lab.jax.org/website/) at the [Jackson
-Lab](https://jax.org).
+of the mouse map converter web service from Gary Churchill's group at
+the [Jackson Lab](https://www.jax.org).
 
 ---
 
