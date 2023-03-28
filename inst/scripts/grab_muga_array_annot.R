@@ -6,10 +6,10 @@ library(data.table)
 
 url <- "https://raw.githubusercontent.com/kbroman/MUGAarrays/main/UWisc/"
 
-files <- c(gm="gm_uwisc_v3.csv",
-           mm="mm_uwisc_v3.csv",
-           mini="mini_uwisc_v4.csv",
-           muga="muga_uwisc_v3.csv")
+files <- c(gm="gm_uwisc_v4.csv",
+           mm="mm_uwisc_v4.csv",
+           mini="mini_uwisc_v5.csv",
+           muga="muga_uwisc_v4.csv")
 
 MUGAmaps <- as.list(files)
 col2keep <- c("marker", "chr", "bp_grcm39", "cM_cox")
@@ -19,7 +19,7 @@ for(i in seq_along(files)) {
     local_file <- here("inst/scripts", file)
 
     # download file
-    if(!file.exists(file)) {
+    if(!file.exists(local_file)) {
         download.file(paste0(url, file), local_file)
     }
 
@@ -35,4 +35,4 @@ for(i in seq_along(files)) {
     MUGAmaps[[i]] <- tmp
 }
 
-save(MUGAmaps, file=here("data", "MUGAmaps.RData"))
+save(MUGAmaps, file=here("data", "MUGAmaps.RData"), compress=TRUE)

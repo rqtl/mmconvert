@@ -19,7 +19,9 @@ See \url{https://github.com/kbroman/MUGAarrays} for the array
 annotations and \url{https://github.com/kbroman/CoxMapV3} for the
 genetic maps. Note that for the genetic map locations, markers were
 shifted so that 0 cM corresponds to 3 Mbp, using the chromosome-
-and sex-specific recombination rate.
+and sex-specific recombination rate. Moreover, the Cox map
+positions were smoothed slightly to avoid regions with 0
+recombination.
 }
 \examples{
 data(MUGAmaps)
