@@ -1,4 +1,4 @@
-## mmconvert 0.5-2 (2023-03-28)
+## mmconvert 0.6 (2023-03-28)
 
 - Added dataset `grcm39_chrlen` with lengths of GRCm39 chromosomes
   in basepairs.
