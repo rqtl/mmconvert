@@ -11,11 +11,8 @@ the [Cox genetic map](https://doi.org/10.1534/genetics.109.105486) positions.
 for the build 39 physical map.)
 
 The package is a reimplementation of part of the basic functionality
-of the [mouse map
-converter](https://churchill-lab.jax.org/mousemapconverter) web
-service from [Gary Churchill's
-group](https://churchill-lab.jax.org/website/) at the [Jackson
-Lab](https://jax.org).
+of the mouse map converter web service from Gary Churchill's group at
+the Jackson Lab.
 
 ---
 
@@ -79,9 +76,9 @@ mmconvert(input_df)
 
 ```
 ##                      marker chr cM_coxV3_ave cM_coxV3_female cM_coxV3_male bp_grcm39 Mbp_grcm39
-## rs13482072       rs13482072  14      0.36404         0.38860       0.34262   6738536   6.738536
-## rs13482231       rs13482231  14     28.63568        34.85621      22.71767  67215850  67.215850
-## gnf14.117.278 gnf14.117.278  14     59.57310        64.62113      55.06443 121955310 121.955310
+## rs13482072       rs13482072  14    0.3938878       0.4204617     0.3707116   6738536   6.738536
+## rs13482231       rs13482231  14   28.7007118      34.8398609    22.8635376  67215850  67.215850
+## gnf14.117.278 gnf14.117.278  14   59.5630160      64.5897950    55.0750080 121955310 121.955310
 ```
 
 If you want to give the input positions in Mbp rather than basepairs,
@@ -95,9 +92,9 @@ mmconvert(input_df, input_type="Mbp")
 
 ```
 ##                      marker chr cM_coxV3_ave cM_coxV3_female cM_coxV3_male bp_grcm39 Mbp_grcm39
-## rs13482072       rs13482072  14      0.36404         0.38860       0.34262   6738536   6.738536
-## rs13482231       rs13482231  14     28.63568        34.85621      22.71767  67215850  67.215850
-## gnf14.117.278 gnf14.117.278  14     59.57310        64.62113      55.06443 121955310 121.955310
+## rs13482072       rs13482072  14    0.3938878       0.4204617     0.3707116   6738536   6.738536
+## rs13482231       rs13482231  14   28.7007118      34.8398609    22.8635376  67215850  67.215850
+## gnf14.117.278 gnf14.117.278  14   59.5630160      64.5897950    55.0750080 121955310 121.955310
 ```
 
 The input positions can also be provided in sex-averaged, female, or male cM.

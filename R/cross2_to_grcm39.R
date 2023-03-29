@@ -22,7 +22,8 @@
 #' @seealso [MUGAmaps]
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' library(qtl2)
 #' file <- paste0("https://raw.githubusercontent.com/rqtl/",
 #'                "qtl2data/main/DOex/DOex.zip")
 #' DOex <- read_cross2(file)
