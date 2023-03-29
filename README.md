@@ -18,7 +18,11 @@ the Jackson Lab.
 
 ### Installation
 
-Install the mmconvert package from
+Install the package from
+[CRAN](https://cran.r-project.org/package=mmconvert) with
+`install.packages("mmconvert")`.
+
+Alternatively, install the mmconvert package from
 [GitHub](https://github.com/rqtl/mmconvert) using the
 [remotes package](https://remotes.r-lib.org):
 
