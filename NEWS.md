@@ -1,3 +1,8 @@
+## mmconvert 0.8 (2023-03-29)
+
+- Small changes for CRAN submission.
+
+
 ## mmconvert 0.6 (2023-03-28)
 
 - Added dataset `grcm39_chrlen` with lengths of GRCm39 chromosomes

@@ -27,7 +27,8 @@ positions, revising marker order and omitting markers that are not
 found.
 }
 \examples{
-\dontrun{
+\donttest{
+library(qtl2)
 file <- paste0("https://raw.githubusercontent.com/rqtl/",
                "qtl2data/main/DOex/DOex.zip")
 DOex <- read_cross2(file)
