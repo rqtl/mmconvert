@@ -38,10 +38,10 @@ Alternatively, install the mmconvert package from
 
 #### `mmconvert()`
 
-`mmconvert()` takes a set of positions as input, plus and
+`mmconvert()` takes a set of positions as input, plus an
 indication of whether they are basepairs or Mbp (in build 39) or
-sex-averaged, female, or male cM (from the [revised Cox genetic
-map](https://github.com/kbroman/CoxMapV3)).
+sex-averaged, female, or male cM from a slightly smoothed version of the [revised Cox genetic
+map](https://github.com/kbroman/CoxMapV3).
 
 The input positions can be character strings like `"chr:position"`.
 
