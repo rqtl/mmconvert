@@ -68,7 +68,7 @@ input_df <- data.frame(chr=c(14,14,14),
                marker=c("rs13482072", "rs13482231", "gnf14.117.278"))
 ```
 
-For either of these cases, the output is a data frame with seven
+For any of these cases, the output is a data frame with seven
 columns: marker, chromosome, sex-averaged cM, female cM, male cM,
 basepairs, and mega-basepairs.
 
