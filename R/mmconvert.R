@@ -119,6 +119,25 @@ mmconvert <-
         }
     }
 
+    # if input_type == "male_cM" or "ave_cM", drop anything on X chromosome
+    if(input_type %in% c("ave_cM", "male_cM") && any(chr == "X")) {
+        positions <- positions[chr != "X"]
+        chr <- chr[chr != "X"]
+        warning('Omitting X chr as "', input_type, '" is NA')
+    }
+
+    if(length(positions)==0) {
+        return(
+            data.frame(marker=character(0),
+                       chr=character(0),
+                       cM_coxV3_ave=numeric(0),
+                       cM_coxV3_female=numeric(0),
+                       cM_coxV3_male=numeric(0),
+                       bp_grcm39=numeric(0),
+                       Mbp_grcm39=numeric(0))
+        )
+    }
+
     # make sure there are marker names
     for(i in seq_along(positions)) {
         if(is.null(names(positions[[i]]))) {
