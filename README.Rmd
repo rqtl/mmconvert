@@ -2,6 +2,7 @@
 
 [![R-CMD-check](https://github.com/rqtl/mmconvert/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/mmconvert/actions)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/mmconvert)](https://cran.r-project.org/package=mmconvert)
+[![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5565363.svg)](https://doi.org/10.5281/zenodo.5565363)
 
 [Karl Broman](https://kbroman.org)
 
