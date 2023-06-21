@@ -111,11 +111,15 @@ mmconvert <-
 
     # drop chr outside 1-19, X
     if(!all(chr %in% c(1:19,"X"))) {
+        extra_chr <- unique(chr[!(chr %in% c(1:19,"X"))])
+        if(length(extra_chr) > 9) extra_chr <- c(extra_chr[1:9], "...")
+
         if(any(chr %in% c(1:19,"X"))) {
-            warning("Ignoring chr ", paste(chr[!(chr %in% c(1:19,"X"))], collapse=", "))
+            warning("Ignoring chr ", paste(extra_chr, collapse=", "))
             positions <- positions[chr %in% c(1:19,"X")]
+            chr <- chr[chr %in% c(1:19,"X")]
         } else {
-            stop("Chromosome should be in 1-19, X; we see: ", paste(chr, collapse=", "))
+            stop("Chromosome should be in 1-19, X; we see: ", paste(extra_chr, collapse=", "))
         }
     }
 
