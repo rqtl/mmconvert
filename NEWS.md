@@ -1,4 +1,4 @@
-## mmconvert 0.11-1 (2023-06-21)
+## mmconvert 0.11-2 (2023-06-22)
 
 - Fix problem with warning message in `mmconvert()`.
   (Issue #10.)

@@ -4,7 +4,7 @@
 \alias{grcm39_chrlen}
 \title{Mouse chromosome lengths in basepairs for build GRCm39}
 \source{
-\url{https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_000001635.27/}
+\url{https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/}
 }
 \description{
 A vector of mouse chromosome lengths in basepairs for mouse genome build GRCm39.

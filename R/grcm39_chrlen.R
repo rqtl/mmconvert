@@ -5,7 +5,7 @@
 #'
 #' @description A vector of mouse chromosome lengths in basepairs for mouse genome build GRCm39.
 #'
-#' @source <https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_000001635.27/>
+#' @source <https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/>
 #'
 #' @keywords datasets
 #'
